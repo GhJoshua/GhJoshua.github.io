@@ -4,8 +4,9 @@
 
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="FirstBlog, 五分钟学编程">
-    <meta name="description" content="FirstBlog | 五分钟学编程">
+    <meta name="keywords" content="Java 学习二叉树, 五分钟学编程">
+    <meta name="description" content="Java是一种可以撰写跨平台应用软件的面向对象的程序设计语言。Java 技术具有卓越的通用性、高效性、平台移植性和安全性，广泛应用于PC、数据中心、游戏控制台、科学超级计算机、移动电话和互联网，同时拥有全球最大的开发者专业社群。
+给你学习路">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -13,7 +14,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>FirstBlog | 五分钟学编程</title>
+    <title>Java 学习二叉树 | 五分钟学编程</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -257,13 +258,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/18.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/4.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        FirstBlog
+                        Java 学习二叉树
                     </div>
                 </div>
             </div>
@@ -353,9 +354,13 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/BinaryTree/" target="_blank">
+                                <span class="chip bg-color">BinaryTree</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
@@ -373,14 +378,14 @@
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        0
+                        2.3k
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        1 分
+                        8 分
                     </div>
                     
                 
@@ -396,7 +401,131 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                
+                <p><strong>Java是一种可以撰写跨平台应用软件的面向对象的程序设计语言。Java 技术具有卓越的通用性、高效性、平台移植性和安全性，广泛应用于PC、数据中心、游戏控制台、科学超级计算机、移动电话和互联网，同时拥有全球最大的开发者专业社群。</strong></p>
+<p>给你学习路线：html-css-js-jq-javase-数据库-jsp-servlet-Struts2-hibernate-mybatis-spring4-springmvc-ssh-ssm</p>
+<p><img src="https:////upload-images.jianshu.io/upload_images/5862033-5d4f9c3b987e4488.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/580" alt="img"></p>
+<p>本文撇开一些非常苦涩、难以理解的概念来讲讲二叉树，仅入门观看(或复习)….</p>
+<p>首先，我们来讲讲什么是树：</p>
+<p>树是一种<strong>非线性</strong>的数据结构，相对于线性的数据结构(链表、数组)而言，<strong>树的平均运行时间更短(往往与树相关的排序时间复杂度都不会高)</strong></p>
+<p>在现实生活中，我们一般的树长这个样子的：</p>
+<p><img src="https:////upload-images.jianshu.io/upload_images/5862033-9c988ac5ba8ed192?imageMogr2/auto-orient/strip%7CimageView2/2/w/260" alt="img"></p>
+<p>小编推荐一个学Java的学习裙【  六五零，五五四，六零七  】，无论你是大牛还是小白，是想转行还是想入行都可以来了解一起进步一起学习！裙内有开发工具，很多干货和技术资料分享！</p>
+<p>但是在编程的世界中，我们一般把树<strong>“倒”</strong>过来看，这样容易我们分析：</p>
+<p><img src="https:////upload-images.jianshu.io/upload_images/5862033-3a2691f60d36d232?imageMogr2/auto-orient/strip%7CimageView2/2/w/451" alt="img"></p>
+<p>一般的树是有很多很多个分支的，分支下又有很多很多个分支，如果在程序中研究这个会非常<strong>麻烦</strong>。因为本来<strong>树就是非线性</strong>的，而我们计算机的<strong>内存是线性存储</strong>的，太过复杂的话我们无法设计出来的。</p>
+<p>因此，我们先来研究<strong>简单又经常用</strong>的—&gt; <strong>二叉树</strong></p>
+<p>1.1树的一些概念</p>
+<p>我就拿上面的图来进行画来讲解了：</p>
+<p><img src="https:////upload-images.jianshu.io/upload_images/5862033-cefa97f0211d062e?imageMogr2/auto-orient/strip%7CimageView2/2/w/640" alt="img"></p>
+<p>二叉树的意思就是说：<strong>每个节点不能多于有两个儿子</strong>，上面的图就是一颗二叉树。</p>
+<p><strong>一棵树至少会有一个节点(根节点)</strong></p>
+<p><strong>树由节点组成</strong>，每个节点的数据结构是这样的：</p>
+<p>因此，我们定义树的时候往往是<strong>-&gt;定义节点-&gt;节点连接起来就成了树</strong>，而节点的定义就是：<strong>一个数据、两个指针(如果有节点就指向节点、没有节点就指向null)</strong></p>
+<p><img src="https:////upload-images.jianshu.io/upload_images/5862033-95927bc38e63f62e?imageMogr2/auto-orient/strip%7CimageView2/2/w/235" alt="img"></p>
+<p>1.2静态创建二叉树</p>
+<p>上面说了，<strong>树是由若干个节点组成，节点连接起来就成了树</strong>，而<strong>节点由一个数据、两个指针组成</strong></p>
+<p>因此，<strong>创建树实际上就是创建节点，然后连接节点</strong></p>
+<p>首先，使用Java类定义节点：</p>
+<p><img src="https:////upload-images.jianshu.io/upload_images/5862033-5399b34594c1141c?imageMogr2/auto-orient/strip%7CimageView2/2/w/640" alt="img"></p>
+<p>下面我们就拿这个二叉树为例来构建吧：</p>
+<p><img src="https:////upload-images.jianshu.io/upload_images/5862033-d0bc16c4b201ebd8?imageMogr2/auto-orient/strip%7CimageView2/2/w/463" alt="img"></p>
+<p>为了方便构建，我就给了它一个带参数的构造方法和set、get方法了：</p>
+<p><img src="https:////upload-images.jianshu.io/upload_images/5862033-a1d6865ef249f1c3?imageMogr2/auto-orient/strip%7CimageView2/2/w/525" alt="img"></p>
+<p>那么我们现在就创建了5个节点：</p>
+<p><img src="https:////upload-images.jianshu.io/upload_images/5862033-72e9a0a55eeea420?imageMogr2/auto-orient/strip%7CimageView2/2/w/640" alt="img"></p>
+<p>它们目前的状态是这样子的：</p>
+<p><img src="https:////upload-images.jianshu.io/upload_images/5862033-6ce965cf4364c1a3?imageMogr2/auto-orient/strip%7CimageView2/2/w/640" alt="img"></p>
+<p>于是下面我们去把它连起来：</p>
+<p><img src="https:////upload-images.jianshu.io/upload_images/5862033-624fe0b9732535f7?imageMogr2/auto-orient/strip%7CimageView2/2/w/640" alt="img"></p>
+<p>连接完之后，那么我们的树就创建完成了。</p>
+<p><img src="https:////upload-images.jianshu.io/upload_images/5862033-d07b4938b35cd760?imageMogr2/auto-orient/strip%7CimageView2/2/w/577" alt="img"></p>
+<p>1.3遍历二叉树</p>
+<p>上面说我们的树创建完成了，那怎么证明呢？？我们<strong>如果可以像数组一样遍历它(看它的数据)，那就说明它创建完成了</strong>～</p>
+<p>值得说明的是：<strong>二叉树遍历有三种方式</strong></p>
+<p>先序遍历</p>
+<p>先访问根节点，然后访问左节点，最后访问右节点(根-&gt;左-&gt;右)</p>
+<p>中序遍历</p>
+<p>先访问左节点，然后访问根节点，最后访问右节点(左-&gt;根-&gt;右)</p>
+<p>后序遍历</p>
+<p>先访问左节点，然后访问右节点，最后访问根节点(左-&gt;右-&gt;根)</p>
+<p>以上面的二叉树为例：</p>
+<p>如果是<strong>先序遍历</strong>：10-&gt;9-&gt;20-&gt;15-&gt;35</p>
+<p>如果是<strong>中序遍历</strong>：9-&gt;10-&gt;15-&gt;20-&gt;35</p>
+<p>可能需要解释地方：访问完10节点过后，去找的是20节点，<strong>但20下还有子节点</strong>，因此<strong>先</strong>访问的是20的左儿子15节点。由于15节点没有儿子了。所以就返回20节点，访问20节点。最后访问35节点</p>
+<p>如果是<strong>后序遍历</strong>：9-&gt;15-&gt;35-&gt;20-&gt;10</p>
+<p>可能需要解释地方：先访问9节点，随后应该访问的是20节点，<strong>但20下还有子节点</strong>，因此<strong>先</strong>访问的是20的左儿子15节点。由于15节点没有儿子了。所以就去访问35节点，由于35节点也没有儿子了，所以返回20节点，最终返回10节点</p>
+<p>一句话总结：<strong>先序(根-&gt;左-&gt;右)，中序(左-&gt;根-&gt;右)，后序(左-&gt;右-&gt;根)。如果访问有孩子的节点，先处理孩子的，随后返回</strong></p>
+<p>无论先中后遍历，每个节点的遍历如果访问有孩子的节点，先处理孩子的(逻辑是一样的)</p>
+<p>因此我们很容易想到<strong>递归</strong></p>
+<p>递归的出口就是：<strong>当没有子节点了，就返回</strong></p>
+<p>因此，我们可以写出这样的<strong>先序遍历代码</strong>：</p>
+<p><img src="https:////upload-images.jianshu.io/upload_images/5862033-378f84f96937f028?imageMogr2/auto-orient/strip%7CimageView2/2/w/640" alt="img"></p>
+<p>结果跟我们刚才说的是一样的：</p>
+<p><img src="https:////upload-images.jianshu.io/upload_images/5862033-b92f0e70e7001722.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/439" alt="img"></p>
+<p>我们再用<strong>中序遍历</strong>调用一遍吧：</p>
+<p><img src="https:////upload-images.jianshu.io/upload_images/5862033-06ea85b36d4fc931?imageMogr2/auto-orient/strip%7CimageView2/2/w/640" alt="img"></p>
+<p>结果跟我们刚才说的是一样的：</p>
+<p><img src="https:////upload-images.jianshu.io/upload_images/5862033-04160366b3272ad0.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/640" alt="img"></p>
+<p>有意思的是：<strong>通过先序和中序或者中序和后序我们可以还原出原始的二叉树</strong>，但是通过先序和后续是无法还原出原始的二叉树的</p>
+<p>也就是说：<strong>通过中序和先序或者中序和后序我们就可以确定一颗二叉树了</strong>！</p>
+<p>二、动态创建二叉树</p>
+<p>上面我们是手动创建二叉树的，一般地：都是给出一个数组给你，让你将数组变成一个二叉树，此时就需要我们动态创建二叉树了。</p>
+<p>二叉树中还有一种特殊的二叉树：<strong>二叉查找树(binary search tree)</strong></p>
+<p>定义：<strong>当前根节点的左边全部比根节点小，当前根节点的右边全部比根节点大</strong>。</p>
+<p>明眼人可以看出，这对我们来<strong>找一个数是非常方便快捷的</strong></p>
+<p>往往我们动态创建二叉树都是创建<strong>二叉查找树</strong></p>
+<p><img src="https:////upload-images.jianshu.io/upload_images/5862033-e679f1c68374848f?imageMogr2/auto-orient/strip%7CimageView2/2/w/577" alt="img"></p>
+<p>小编推荐一个学Java的学习裙【  六五零，五五四，六零七  】，无论你是大牛还是小白，是想转行还是想入行都可以来了解一起进步一起学习！裙内有开发工具，很多干货和技术资料分享！</p>
+<p>2.1动态创建二叉树体验</p>
+<p>假设我们有一个数组：</p>
+<p>int[] arrays = {3, 2, 1, 4, 5};</p>
+<p>那么创建二叉树的步骤是这样的：</p>
+<p>首先将3作为根节点</p>
+<p><img src="https:////upload-images.jianshu.io/upload_images/5862033-d8faff1174f8b4ff?imageMogr2/auto-orient/strip%7CimageView2/2/w/249" alt="img"></p>
+<p>随后2进来了，我们跟3做比较，比3小，那么放在3的左边</p>
+<p><img src="https:////upload-images.jianshu.io/upload_images/5862033-64a67ffc6c976732?imageMogr2/auto-orient/strip%7CimageView2/2/w/379" alt="img"></p>
+<p>随后1进来了，我们跟3做比较，比3小，那么放在3的左边，此时3的左边有2了，因此跟2比，比2小，放在2的左边</p>
+<p><img src="https:////upload-images.jianshu.io/upload_images/5862033-fca45674d663ec2e?imageMogr2/auto-orient/strip%7CimageView2/2/w/370" alt="img"></p>
+<p>随后4进来了，我们跟3做比较，比3大，那么放在3的右边</p>
+<p><img src="https:////upload-images.jianshu.io/upload_images/5862033-62a59ee7b22445ef?imageMogr2/auto-orient/strip%7CimageView2/2/w/541" alt="img"></p>
+<p>随后5进来了，我们跟3做比较，比3大，那么放在3的右边，此时3的右边有4了，因此跟4比，比4大，放在4的右边</p>
+<p><img src="https:////upload-images.jianshu.io/upload_images/5862033-ae58211a83584ba4?imageMogr2/auto-orient/strip%7CimageView2/2/w/594" alt="img"></p>
+<p>那么我们的二叉查找树就建立成功了，<strong>无论任何一颗子树，左边都比根要小，右边比根要大</strong></p>
+<p><img src="https:////upload-images.jianshu.io/upload_images/5862033-669fd63558fa772d?imageMogr2/auto-orient/strip%7CimageView2/2/w/594" alt="img"></p>
+<p>2.2代码实现</p>
+<p>我们的代码实现也很简单，<strong>如果比当前根节点要小，那么放到当前根节点左边，如果比当前根节点要大，那么放到当前根节点右边。</strong></p>
+<p><strong>因为是动态创建的，因此我们得用一个类来表示根节点</strong></p>
+<p><img src="https:////upload-images.jianshu.io/upload_images/5862033-ff66035d7b120086?imageMogr2/auto-orient/strip%7CimageView2/2/w/640" alt="img"></p>
+<p>比较与根谁大，大的往右边，小的往左边：</p>
+<p><img src="https:////upload-images.jianshu.io/upload_images/5862033-32fe4f2e8a12395e?imageMogr2/auto-orient/strip%7CimageView2/2/w/640" alt="img"></p>
+<p>测试代码：</p>
+<p><img src="https:////upload-images.jianshu.io/upload_images/5862033-7e22f874d9d201c7?imageMogr2/auto-orient/strip%7CimageView2/2/w/640" alt="img"></p>
+<p><img src="https:////upload-images.jianshu.io/upload_images/5862033-7c61142b7d9c3597.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/463" alt="img"></p>
+<p>三、查询二叉查找树相关</p>
+<p>3.1查询树的深度</p>
+<p>查询树的深度我们可以这样想：<strong>左边的子树和右边的字数比，谁大就返回谁，那么再接上根节点+1就可以了</strong></p>
+<p><img src="https:////upload-images.jianshu.io/upload_images/5862033-932bbc89e64f9995?imageMogr2/auto-orient/strip%7CimageView2/2/w/640" alt="img"></p>
+<p><img src="https:////upload-images.jianshu.io/upload_images/5862033-3c4040fdaea98b30?imageMogr2/auto-orient/strip%7CimageView2/2/w/640" alt="img"></p>
+<p>3.1查询树的最大值</p>
+<p>从上面先序遍历二叉查找树的时候，细心的同学可能会发现：<strong>中序遍历二叉查找树得到的结果是排好顺序的～</strong></p>
+<p>那么，如果我们的二叉树不是二叉查找树，我们要<strong>怎么查询他的最大值呢</strong>？</p>
+<p>可以这样：</p>
+<p><img src="https:////upload-images.jianshu.io/upload_images/5862033-fbf0d48439f6a0e5?imageMogr2/auto-orient/strip%7CimageView2/2/w/640" alt="img"></p>
+<p>小编推荐一个学Java的学习裙【  六五零，五五四，六零七  】，无论你是大牛还是小白，是想转行还是想入行都可以来了解一起进步一起学习！裙内有开发工具，很多干货和技术资料分享！</p>
+<p><strong>左边找最大值-&gt;递归</strong></p>
+<p><strong>右边找最大值-&gt;递归</strong></p>
+<p><img src="https:////upload-images.jianshu.io/upload_images/5862033-4eb7f7247f995cf2?imageMogr2/auto-orient/strip%7CimageView2/2/w/640" alt="img"></p>
+<p>四、最后</p>
+<p>无论是在遍历树、查找深度、查找最大值都用到了递归，<strong>递归在非线性的数据结构中是用得非常多的</strong>…</p>
+<p>树的应用也非常广泛，此篇简单地说明了树的数据结构，高级的东西我也没弄懂，可能以后用到的时候会继续深入…</p>
+<p><img src="https:////upload-images.jianshu.io/upload_images/5862033-50f9d72b90047962.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/943" alt="img"></p>
+<p><img src="https:////upload-images.jianshu.io/upload_images/5862033-e36c595ed02ec1d5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/929" alt="img"></p>
+<p><img src="https:////upload-images.jianshu.io/upload_images/5862033-8b06b68ce9f04850.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/724" alt="img"></p>
+<p>作者：Java小辰</p>
+<p>链接：<a href="https://www.jianshu.com/p/8304c53d3015" target="_blank" rel="noopener">https://www.jianshu.com/p/8304c53d3015</a></p>
+<p>來源：简书</p>
+<p>简书著作权归作者所有，任何形式的转载都请联系作者获得授权并注明出处。</p>
+
             </div>
             <hr>
 
@@ -543,7 +672,7 @@
                     </span>
                     <a href="http://GhJoshua.github.io" class="b-link-green">五分钟学编程</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/2019/02/26/FirstBlog/" class="b-link-green">FirstBlog</a>
+                    <a href="/2019/02/26/FirstBlog/" class="b-link-green">Java 学习二叉树</a>
                 </p>
             </div>
         </div>
@@ -573,13 +702,14 @@
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="FirstBlog">
+                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="Java 学习二叉树">
                         
-                        <span class="card-title">FirstBlog</span>
+                        <span class="card-title">Java 学习二叉树</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary"></div>
+                    <div class="summary">Java是一种可以撰写跨平台应用软件的面向对象的程序设计语言。Java 技术具有卓越的通用性、高效性、平台移植性和安全性，广泛应用于PC、数据中心、游戏控制台、科学超级计算机、移动电话和互联网，同时拥有全球最大的开发者专业社群。
+给你学习路</div>
                     <div class="publish-info">
                             <span class="publish-date">
                                 <i class="fa fa-clock-o fa-fw icon-date"></i>2019-02-26
@@ -594,6 +724,14 @@
                 </div>
 
                 
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/BinaryTree/" target="_blank">
+                        <span class="chip bg-color">BinaryTree</span>
+                    </a>
+                    
+                </div>
+                
             </div>
         </div>
         
@@ -603,17 +741,19 @@
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/02/26/hello-world/">
+                <a href="/2019/02/26/generics/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Hello World">
+                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="Java 泛型与通配符">
                         
-                        <span class="card-title">Hello World</span>
+                        <span class="card-title">Java 泛型与通配符</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hex</div>
+                    <div class="summary">参考地址： 《Java 泛型，你了解类型擦除吗？》 《Java中的逆变与协变》 《java 泛型中 T、E … 和 问号（通配符）的区别》
+
+注：本文是在 frank909 的文章 《Java 泛型，你了解类型擦除吗？》 的基础上，参考其他</div>
                     <div class="publish-info">
                             <span class="publish-date">
                                 <i class="fa fa-clock-o fa-fw icon-date"></i>2019-02-26
@@ -625,6 +765,14 @@
                             
                         </span>
                     </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/generics/" target="_blank">
+                        <span class="chip bg-color">generics</span>
+                    </a>
+                    
                 </div>
                 
             </div>
@@ -734,7 +882,7 @@
 
             
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">73</span>
+                <span class="white-color">7.3k</span>
             
 
             
